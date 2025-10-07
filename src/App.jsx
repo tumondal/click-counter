@@ -28,7 +28,7 @@ export default function App() {
 
   function addMiniCounter(event) {
     if (
-      !["main-counter", "mini-counter", "click-button"].includes(
+      !["main-counter", "mini-counter", "click-button", "trademark"].includes(
         event.target.className
       )
     ) {
@@ -69,6 +69,7 @@ export default function App() {
         Click
       </button>
       <p>Pssst... try clicking somewhere random</p>
+      <p className="trademark">By Tuhin Mondal</p>
     </main>
   );
 }
