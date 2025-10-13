@@ -47,13 +47,19 @@ export default function App() {
   }
 
   function updateMiniCounters(id) {
-    console.log(miniCounters.length + 1);
     setMiniCounters((prevCounters) =>
       prevCounters.map((counter) =>
         counter.id === id
           ? { ...counter, num: counter.num + 1, z: 2 }
           : { ...counter, z: 1 }
       )
+    );
+  }
+
+  function updateAllCounters() {
+    updateCounter();
+    setMiniCounters((prevCounters) =>
+      prevCounters.map((counter) => ({ ...counter, num: counter.num + 1 }))
     );
   }
 
@@ -65,7 +71,7 @@ export default function App() {
         {mainCount}
       </button>
       <h2>times!</h2>
-      <button onClick={updateCounter} className="click-button">
+      <button onClick={updateAllCounters} className="click-button">
         Click
       </button>
       <p>Pssst... try clicking somewhere random</p>
