@@ -43,6 +43,7 @@ export default function App() {
           id: nanoid(),
         },
       ]);
+      updateCounter();
     }
   }
 
@@ -54,6 +55,7 @@ export default function App() {
           : { ...counter, z: 1 }
       )
     );
+    updateCounter();
   }
 
   function updateAllCounters() {
